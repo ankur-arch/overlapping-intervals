@@ -1,9 +1,9 @@
-export type Interval<T> = {
+export interface Interval<T> {
   start: T;
   end?: T;
   additional?: unknown;
-};
+}
 
 export interface IntervalComparisonStrategy<T> {
-  isOverlapping(a: Interval<T>, b: Interval<T>, exclusive: boolean): boolean;
+  isOverlapping: (a: Interval<T>, b: Interval<T>, exclusive: boolean) => boolean;
 }

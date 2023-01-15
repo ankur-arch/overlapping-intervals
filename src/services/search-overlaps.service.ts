@@ -21,8 +21,8 @@ export class LineSweepOverlapStrategy<T> implements SearchOverlappingIntervalsSt
     this.sortFn = sortFn;
   }
 
-  private findOverlapsInArray(a: Interval<T>[], exclusive: boolean): Interval<T>[] {
-    let overlaps: Interval<T>[] = [];
+  private findOverlapsInArray(a: Array<Interval<T>>, exclusive: boolean): Array<Interval<T>> {
+    const overlaps: Array<Interval<T>> = [];
 
     // Check for overlaps within the array
     for (let i = 0; i < a.length; i++) {
@@ -42,18 +42,18 @@ export class LineSweepOverlapStrategy<T> implements SearchOverlappingIntervalsSt
    * @returns {[Interval<T>[], Interval<T>[], Interval<T>[], boolean]} - [overlapping times in a and were there conflicts in a | b, conflicts in A, conflicts in B, isOverlapping]
    */
   findOverlaps(
-    a: Interval<T>[],
-    b: Interval<T>[],
+    a: Array<Interval<T>>,
+    b: Array<Interval<T>>,
     exclusive: boolean
-  ): [Interval<T>[], Interval<T>[], Interval<T>[], boolean] {
+  ): [Array<Interval<T>>, Array<Interval<T>>, Array<Interval<T>>, boolean] {
     a.sort(this.sortFn);
     b.sort(this.sortFn);
 
     let i = 0;
     let j = 0;
-    let overlapping: Interval<T>[] = [];
-    let overlapsA: Interval<T>[] = [];
-    let overlapsB: Interval<T>[] = [];
+    const overlapping: Array<Interval<T>> = [];
+    let overlapsA: Array<Interval<T>> = [];
+    let overlapsB: Array<Interval<T>> = [];
 
     // Check for overlaps within 'a'
     overlapsA = this.findOverlapsInArray(a, exclusive);
@@ -77,7 +77,7 @@ export class LineSweepOverlapStrategy<T> implements SearchOverlappingIntervalsSt
       overlapping,
       overlapsA,
       overlapsB,
-      !(overlapping.length == 0 && overlapsA.length == 0 && overlapsB.length == 0),
+      !(overlapping.length === 0 && overlapsA.length === 0 && overlapsB.length === 0),
     ];
   }
 }

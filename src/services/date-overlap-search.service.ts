@@ -2,15 +2,15 @@ import { Interval } from '../types';
 import { DateStrategy } from './dates-strategy.service';
 import { LineSweepOverlapStrategy } from './search-overlaps.service';
 
-export const dateEndTimesComparison = (a: Interval<Date>, b: Interval<Date>) => {
-  if (!!a.end && !!b.end) {
+export const dateEndTimesComparison = (a: Interval<Date>, b: Interval<Date>): number => {
+  if (!(a.end == null) && !(b.end == null)) {
     // both a and b  return difference in seconds
-    let diffInMilliseconds = a.end!.getTime() - b.end!.getTime();
+    const diffInMilliseconds = a.end.getTime() - b.end.getTime();
     return diffInMilliseconds / 1000;
-  } else if (!a.end && !!b.end) {
+  } else if (a.end == null && !(b.end == null)) {
     // a is infinity hence a is greater
     return 1;
-  } else if (!!a.end && !b.end) {
+  } else if (!(a.end == null) && b.end == null) {
     // b is infinity hence b is greater
     return -1;
   }

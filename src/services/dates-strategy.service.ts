@@ -5,10 +5,10 @@ export class DateIntervalComparisonStrategy implements IntervalComparisonStrateg
     const [from1, to1, from2, to2] = [a.start, a.end, b.start, b.end];
 
     if (exclusive) {
-      return (!to2 || from1 < to2) && (!to1 || to1 > from2);
+      return (to2 == null || from1 < to2) && (to1 == null || to1 > from2);
     }
 
-    return (!to2 || from1 <= to2) && (!to1 || to1 >= from2);
+    return (to2 == null || from1 <= to2) && (to1 == null || to1 >= from2);
   }
 }
 
