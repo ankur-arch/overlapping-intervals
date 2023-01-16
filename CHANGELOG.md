@@ -1,5 +1,11 @@
 # overlapping_intervals
 
+## 1.0.2
+
+### Patch Changes
+
+- cef0031: add dist file to package.json
+
 ## 1.0.1
 
 ### Patch Changes
