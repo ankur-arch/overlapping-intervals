@@ -1,5 +1,11 @@
 # overlapping_intervals
 
+## 1.0.1
+
+### Patch Changes
+
+- 84f675e: fix module imports/exports
+
 ## 1.0.0
 
 ### Major Changes
