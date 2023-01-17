@@ -2,17 +2,13 @@
   "name": "overlapping_intervals",
   "version": "1.0.1",
   "description": "This npm package provides a quick and easy approach to detect overlapping intervals. The package will return a boolean value indicating whether or not two or more intervals overlap. It is simple to incorporate into any project and may be used to validate user input, scheduling conflicts, and more. This package is an excellent alternative for projects of all sizes due to its minimal footprint and lack of external dependencies.",
-  "main": "dist/index.js",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
   "types": "dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
   "scripts": {
     "lint": "eslint --fix --ext .js,.ts .",
-    "build": "tsup src/index.ts --format cjs,esm --dts",
-    "dev": "node dist/index.js",
-    "dev-build": "swc src -d dist",
-    "start": "dev-build && node dist/index.js",
+    "build": "tsup src/index.ts",
+    "start": "tsup src/index.ts --format cjs,esm --dts && node dist/index.js",
     "prepare": "husky install",
     "cm": "cz",
     "test": "jest --verbose"
@@ -51,6 +47,12 @@
     "tsup": "^6.5.0",
     "typescript": "^4.9.4"
   },
+  "exports": {
+    "default": "./dist/index.cjs",
+    "require": "./dist/index.cjs",
+    "import": "./dist/index.mjs",
+    "node": "./dist/index.cjs"
+  },
   "config": {
     "commitizen": {
       "path": "cz-emoji"
@@ -60,5 +62,6 @@
     "hooks": {
       "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true"
     }
-  }
+  },
+  "type": "module"
 }
