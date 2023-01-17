@@ -18,7 +18,8 @@ jobs:
         with:
           node-version: 16.x
           cache: 'pnpm'
-
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH }}
       - run: pnpm install --frozen-lockfile
       - name: Create Release Pull Request
         id: changesets
@@ -31,3 +32,7 @@ jobs:
         run: pnpm publish --no-git-checks --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH }}
+      - name: Generate and upload documentation
+        run: npx typedoc --out docs/ && npx gh-pages -d docs/
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
