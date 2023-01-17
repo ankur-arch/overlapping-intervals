@@ -1,6 +1,6 @@
 {
   "name": "overlapping_intervals",
-  "version": "1.0.7",
+  "version": "1.0.9",
   "description": "This npm package provides a quick and easy approach to detect overlapping intervals. The package will return a boolean value indicating whether or not two or more intervals overlap. It is simple to incorporate into any project and may be used to validate user input, scheduling conflicts, and more. This package is an excellent alternative for projects of all sizes due to its minimal footprint and lack of external dependencies.",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
