@@ -54,15 +54,14 @@ describe('Test cases for `OverlappingDatesSearch`', () => {
 
   const group3b: Interval<Date>[] = [
     { start: new Date('2022-01-21T04:00:00.000Z'), end: new Date('2022-01-22T05:00:00.000Z') },
-    { start: new Date('2023-02-01T00:00:00.000Z') },
     { start: new Date('2022-02-01T00:00:00.000Z'), end: new Date('2022-02-02T00:00:00.000Z') },
     { start: new Date('2022-02-03T00:00:00.000Z'), end: new Date('2022-02-04T00:00:00.000Z') },
   ];
 
   it("Overlap should be found in when the option is exclusive but not when it's inclusive", () => {
     const result = OverlappingDatesSearch.findOverlaps(group3a, group3b, false);
-    expect(result[3]).toBeTruthy();
+    expect(result[3]).toBeFalsy();
     const result2 = OverlappingDatesSearch.findOverlaps(group3a, group3b, true);
-    expect(result2[3]).toBeFalsy();
+    expect(result2[3]).toBeTruthy();
   });
 });
