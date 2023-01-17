@@ -33,6 +33,6 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH }}
       - name: Generate and upload documentation
-        run: npx typedoc --out docs/ && npx gh-pages -d docs/
+        run: npx typedoc src/index.ts  --out docs/ && npx gh-pages -d docs/
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

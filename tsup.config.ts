@@ -3,9 +3,8 @@ import type { Options } from 'tsup';
 const env = process.env.NODE_ENV;
 
 export const tsup: Options = {
-  splitting: true,
-  sourcemap: true, // source map is only available in prod
-  clean: true, // rimraf disr
+  sourcemap: true,
+  clean: true, // rimraf dist
   dts: true, // generate dts file for main module
   format: ['cjs', 'esm'], // generate cjs and esm files
   minify: true,

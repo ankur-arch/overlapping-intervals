@@ -115,7 +115,7 @@ out
 # Nuxt.js build / generate output
 
 .nuxt
-dist
+
 
 # Gatsby files
 
@@ -151,7 +151,6 @@ docs
 # DynamoDB Local files
 
 .dynamodb/
-.yarn*
 
 # TernJS port file
 
@@ -168,5 +167,10 @@ docs
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.\*
-
+.yarn*
 .pnpm-store
+
+src 
+tests
+.eslint*
+.prettier*
