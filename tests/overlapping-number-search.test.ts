@@ -49,8 +49,8 @@ describe('Test cases for `OverlappingNumbersSearch`', () => {
 
   it("Overlap should be found in when the option is exclusive but not when it's inclusive", () => {
     const result = OverlappingNumbersSearch.findOverlaps(group3a, group3b, false);
-    expect(result[3]).toBeTruthy();
+    expect(result[3]).toBeFalsy();
     const result2 = OverlappingNumbersSearch.findOverlaps(group3a, group3b, true);
-    expect(result2[3]).toBeFalsy();
+    expect(result2[3]).toBeTruthy();
   });
 });

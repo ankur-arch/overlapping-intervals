@@ -90,7 +90,7 @@ describe('Testing overlapping interval detection using DateStrategy', () => {
       isOverlapping(
         { start: new Date(2020, 0, 1), end: new Date(2020, 0, 2) },
         { start: new Date(2020, 0, 2) },
-        true,
+        false,
         DateStrategy
       )
     ).toBe(false);
@@ -162,23 +162,23 @@ describe('Testing overlapping interval detection using DateStrategy', () => {
   it('should return true when both inclusive intervals end at the same time', () => {
     expect(
       isOverlapping(
-        { start: new Date(2020, 0, 1), end: new Date(2020, 0, 2) },
-        { start: new Date(2020, 0, 2) },
+        { start: new Date(2020, 0, 4), end: new Date(2020, 0, 5) },
+        { start: new Date(2020, 0, 2), end: new Date(2020, 0, 5) },
         false,
         DateStrategy
       )
     ).toBe(true);
   });
 
-  it('should return false when both exclusive intervals end at the same time', () => {
+  it('should return true when both exclusive intervals end at the same time', () => {
     expect(
       isOverlapping(
-        { start: new Date(2020, 0, 1), end: new Date(2020, 0, 2) },
-        { start: new Date(2020, 0, 2) },
+        { start: new Date(2020, 0, 4), end: new Date(2020, 0, 5) },
+        { start: new Date(2020, 0, 2), end: new Date(2020, 0, 5) },
         true,
         DateStrategy
       )
-    ).toBe(false);
+    ).toBe(true);
   });
 
   it('should return true when both inclusive intervals are the same', () => {
