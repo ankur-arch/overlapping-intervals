@@ -2,6 +2,7 @@ import { Interval } from '../types';
 import { NumberStrategy } from './number-strategy.service';
 import { LineSweepOverlapStrategy } from './search-overlaps.service';
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 type Comparator = (a: Interval<number>, b: Interval<number>) => number;
 
 /**
