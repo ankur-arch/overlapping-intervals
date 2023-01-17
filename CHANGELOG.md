@@ -4,6 +4,13 @@
 
 ### Patch Changes
 
+- cef0031: add dist file to package.json
+- 0e2b1b5: fix import issues
+
+## 1.0.1
+
+### Patch Changes
+
 - 84f675e: fix module imports/exports
 
 ## 1.0.0
