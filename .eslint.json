@@ -1,0 +1,8 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["jest"],
+  "env": {
+    "jest/globals": true
+  },
+  "extends": ["plugin:prettier/recommended"]
+}
