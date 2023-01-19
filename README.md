@@ -2,7 +2,7 @@
 
 A simple library for searching for genereic overlapping intervals.
 
-[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/) [![ESLint](https://img.shields.io/badge/eslint-enabled-brightgreen.svg)](https://eslint.org/)
+<a href='https://ankur-arch.github.io/overlapping-intervals/' target="_blank"><img alt='conventional commits' src='https://img.shields.io/badge/Commitizen-100000?style=for-the-badge&logo=conventional commits&logoColor=white&labelColor=000000&color=E75757'/></a> <a href='https://ankur-arch.github.io/overlapping-intervals/' target="_blank"><img alt='Eslint' src='https://img.shields.io/badge/ESLINT-100000?style=for-the-badge&logo=Eslint&logoColor=white&labelColor=5214BD&color=black'/></a> <a href='https://ankur-arch.github.io/overlapping-intervals/' target="_blank"><img alt='GitHub' src='https://img.shields.io/badge/Github_Pages-100000?style=for-the-badge&logo=GitHub&logoColor=white&labelColor=black&color=black'/></a> <a href='https://www.npmjs.com/package/overlapping_intervals' target="_blank"><img alt='npm' src='https://img.shields.io/badge/npmjs-100000?style=for-the-badge&logo=npm&logoColor=white&labelColor=0DB450&color=000000'/></a>
 
 ---
 
